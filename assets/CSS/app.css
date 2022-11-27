@@ -249,7 +249,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]::before {
-    content: url(/assets/images/icon-check.svg);
+    content: url(./assets/images/icon-check.svg);
     visibility: hidden;
     
   }
