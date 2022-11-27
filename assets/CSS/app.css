@@ -1,0 +1,439 @@
+/* reset all styles*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+/*reset all input styles*/
+input{
+    border-style: hidden;
+}
+
+button[disabled]{
+    pointer-events: none;
+}
+
+input[type=text]{
+    border: none;
+    background-color: inherit;
+    width: 80%;
+    color: var(--card-color);
+    font-size: 2rem;
+
+
+}
+input[type=text]:focus{
+    outline: none;
+
+
+}
+input::placeholder{
+    font-weight: bold;
+    font-size: 1.75rem;
+    color:#55535B;
+    line-height: 2.6875rem ;
+}
+
+img{
+    width: auto;
+    height: 50%;
+}
+
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--green);
+    cursor: pointer;
+    width: 100%;
+
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
+  }
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(var(--green),var(--green)) 0/var(--sx) 100% no-repeat, #18171f;
+    height: 0.5rem;
+    
+
+  }
+
+
+  /***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -8px; /* Centers thumb on the track */
+    background-color: var(--card-color);
+    height: 1.5rem;
+    width: 1.5rem; 
+    border-radius: 100%;   
+ }
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]:hover::-webkit-slider-thumb {
+    border: 2px solid var(--green);
+    background-color: var(--background-color);
+  }
+  
+  input[type="range"]:focus::-webkit-slider-thumb {
+    border: 2px solid var(--green);
+    background-color: var(--background-color);
+  }
+  
+  /******** Firefox ********/
+  input[type="range"]:hover::-moz-slider-thumb {
+    border: 2px solid var(--green);
+    background-color: var(--background-color);
+  }
+  
+  input[type="range"]:focus::-moz-slider-thumb {
+    border: 2px solid var(--green);
+    background-color: var(--background-color);
+  }
+
+
+
+*{
+  box-sizing: border-box;
+}
+
+:root {
+    --background-color: #18171f;
+    --card-color:#E6E5EA;
+    --green:#A4FFAF;
+    --red:#F64A4A;
+    --orange:#FB7C58;
+    --yellow:#F8CD65;
+    --grey:#817D92;
+    --black:#24232C;
+    --body-fonts: 'JetBrains Mono', monospace;
+    --line-height: 1.35;
+     
+  }
+
+html, body{
+    font-family: var(--body-fonts);
+    font-size: 1rem;
+    padding: 0.85rem 0.75rem;
+    color: var(--card-color);
+    line-height: var(--line-height);
+    font-weight: 500;
+    background-color: var(--background-color);
+}
+
+.container{
+    background-color: var(--background-color);
+    display: inline-block;
+    margin: 0 auto;
+}
+header{
+    padding: 3rem 0 1rem 0;
+    text-align: center;
+    color: var(--grey);
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.password{
+    background-color: var(--black);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1rem 0;
+}
+.copied{
+    color: var(--green);
+    font-size: 0.75rem;
+    padding-right: 0.55rem;
+    margin: 0 auto;
+    position: relative;
+    float: left;
+    text-transform: uppercase;
+    visibility: hidden;
+}
+.icon:hover{
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+.evaluator{
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.charlength{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 3rem 0 ;
+}
+.charlength__output{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+}
+
+.charlength__output output{
+    font-size: 1.5rem;
+}
+
+.passwordChar{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+/*modify CheckBoxes*/
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin:0;
+    font: inherit;
+    color: var(--card-color);
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 0.15rem solid var(--card-color);
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease-in;
+
+}
+
+input[type="checkbox"]::before {
+    content: url(../assets/images/icon-check.svg);
+    visibility: hidden;
+    
+  }
+
+input[type="checkbox"]:checked::before {
+
+    visibility:visible;
+}
+    
+  
+input[type="checkbox"]:checked{
+    background-color: var(--green);
+    border: 0.15rem solid var(--green);
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
+.myCheck{
+    margin: 0 0 1rem 0;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 1rem;
+}
+
+.passwordStrength{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background-color);
+    padding: 1rem;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+svg{
+    width: 10px;
+    height: 25px;
+    fill:var(--background-color);stroke-width:3;stroke:var(--card-color);
+    border: 2px solid var(--card-color);
+}
+
+.strength__title{
+    color: var(--grey);
+    text-align: center ;
+}
+.output__graph__main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:0.25rem;
+}
+
+.strengthLevel{
+    margin: 0 0 0 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+/*style the button*/
+
+.btn{
+    width: 100%;
+    margin: 1rem 0 0 0;
+}
+
+.btn button{
+    width: 100%;
+    padding: 1.125rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: var(--green);
+    font-weight: 600;
+    color: #09080d83;
+    transition: all 0.3s ease-in;
+
+}
+
+.btn button img{
+    margin-left: 1rem;
+    opacity: 0.7;
+    position: relative;
+    bottom: 1px;
+}
+
+.btn button:hover{
+ background-color: var(--black);
+ border: 2px solid var(--green);
+ color: var(--green);
+ cursor: pointer;
+
+}
+
+.btn button:hover img{
+    filter: invert(83%) sepia(41%) saturate(359%) hue-rotate(69deg) brightness(102%) contrast(103%);
+}
+
+@media (min-width: 700px){
+
+    html, body{
+
+        font-size: 1.125rem;
+        padding: 1rem 5rem  5rem 5rem;
+        
+    }
+    .copied{
+
+        padding-right: 0.75rem;
+   
+    }
+}
+
+@media (min-width: 997px){
+
+    html, body{
+
+        font-size: 1.2rem;
+        padding: 1rem 5rem  5rem 10rem;
+        
+    }
+
+    input::placeholder{
+
+        font-size: 2rem;
+   
+    }
+
+    .copied{
+
+        padding-right: 1rem;
+   
+    }
+    .strengthLevel{
+        margin: 0 0 0 6.2rem;
+    }
+    .ouput__graph{
+        gap:0.5rem;
+    }
+}
+
+@media (min-width: 1440px){
+
+    html, body{
+
+        font-size: 1.4rem;
+        padding: 1rem 5rem  5rem 10rem;
+        
+    }
+
+    .icon{
+        height: 2rem;
+
+    }
+    .container{
+        min-width: 800px;
+        max-height: 100vh;
+    }
+    .strengthLevel{
+        margin: 0 0 0 8.5rem;
+        font-size: 1.5rem;
+    }
+    .ouput__graph{
+        gap:0.5rem;
+    }
+
+    .password{
+        padding: 2.5rem; 
+    }
+    
+    
+    .evaluator{
+        padding: 2rem;
+    }
+    svg{
+        width: 15px;
+        height: 35px;
+        fill:var(--background-color);stroke-width:3;stroke:var(--card-color);
+        border: 2px solid var(--card-color);
+    }
+
+    .output__graph__main{
+        gap:0.5rem;
+    }
+    .charlength__output output{
+        font-size: 2.5rem;
+    }
+
+}
